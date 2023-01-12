@@ -90,7 +90,7 @@ export const globalStyles = globalCss({
     padding: 0,
     margin: 0,
   },
-  body: {
+  "html, body": {
     margin: 0,
     padding: 0,
     fontFamily: "$untitled",
@@ -99,9 +99,8 @@ export const globalStyles = globalCss({
     color: "$slate11",
   },
   button: {
-    ":hover": {
+    "&:hover": {
       cursor: "pointer",
-      opacity: 0.8,
     },
   },
 });
