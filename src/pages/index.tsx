@@ -10,13 +10,19 @@ const Container = styled("div", {
 });
 
 const Home: NextPage = () => {
+  const handleClick = () => {
+    console.log("clicked");
+  };
+
   return (
     <Container>
-      <Button>Click me</Button>
-      <Button color="gray">Click me</Button>
-      <Button color="blue">Click me</Button>
-      <Button color="red">Click me</Button>
-      <Button color="green">Click me</Button>
+      <Button onClick={handleClick}>Click me</Button>
+      <Button color="primary" onClick={handleClick}>
+        Click me
+      </Button>
+      <Button color="danger" onClick={handleClick}>
+        Click me
+      </Button>
     </Container>
   );
 };

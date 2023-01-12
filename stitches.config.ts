@@ -1,12 +1,10 @@
 import {
-  gray,
-  blue,
-  red,
-  green,
-  grayDark,
-  blueDark,
-  redDark,
-  greenDark,
+  slate,
+  slateDark,
+  crimson,
+  crimsonDark,
+  indigo,
+  indigoDark,
 } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
@@ -22,10 +20,9 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      ...gray,
-      ...blue,
-      ...red,
-      ...green,
+      ...slate,
+      ...indigo,
+      ...crimson,
     },
     space: {
       1: "4px",
@@ -42,7 +39,11 @@ export const {
       untitled: "Untitled Sans, apple-system, sans-serif",
       mono: "Söhne Mono, menlo, monospace",
     },
-    fontWeights: {},
+    fontWeights: {
+      1: 400,
+      2: 500,
+      3: 600,
+    },
     lineHeights: {},
     letterSpacings: {},
     sizes: {},
@@ -75,12 +76,11 @@ export const {
   },
 });
 
-export const darkTheme = createTheme("dark-theme", {
+export const darkTheme = createTheme("dark", {
   colors: {
-    ...grayDark,
-    ...blueDark,
-    ...redDark,
-    ...greenDark,
+    ...slateDark,
+    ...indigoDark,
+    ...crimsonDark,
   },
 });
 
@@ -95,7 +95,13 @@ export const globalStyles = globalCss({
     padding: 0,
     fontFamily: "$untitled",
     fontSize: "$2",
-    background: "$gray1",
-    color: "$gray12",
+    background: "$slate1",
+    color: "$slate11",
+  },
+  button: {
+    ":hover": {
+      cursor: "pointer",
+      opacity: 0.8,
+    },
   },
 });

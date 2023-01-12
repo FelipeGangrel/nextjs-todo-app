@@ -3,27 +3,39 @@ import { styled } from "@root/stitches.config";
 
 export const Button = styled("button", {
   padding: "$2 $3",
-  background: "transparent",
   border: "none",
   borderRadius: "$2",
+  fontWeight: "$2",
+  color: "$slate11",
+  background: "transparent",
+  "&:hover": {
+    background: "$slate2",
+  },
+  "&:active": {
+    background: "$slate3",
+  },
 
   variants: {
     color: {
-      gray: {
-        background: "$gray3",
-        color: "$gray11",
+      primary: {
+        color: "$indigo12",
+        background: "$indigo3",
+        "&:hover": {
+          background: "$indigo4",
+        },
+        "&:active": {
+          background: "$indigo5",
+        },
       },
-      blue: {
-        background: "$blue3",
-        color: "$blue11",
-      },
-      red: {
-        background: "$red3",
-        color: "$red11",
-      },
-      green: {
-        background: "$green3",
-        color: "$green11",
+      danger: {
+        color: "$crimson12",
+        background: "$crimson3",
+        "&:hover": {
+          background: "$crimson4",
+        },
+        "&:active": {
+          background: "$crimson5",
+        },
       },
     },
   },
