@@ -1,4 +1,4 @@
-import { styled } from "@root/stitches.config";
-import { Button } from "@/components/Button";
+import { Button } from '@/components/Button'
+import { styled } from '@root/stitches.config'
 
-export const ToggleButton = styled(Button, {});
+export const ToggleButton = styled(Button, {})

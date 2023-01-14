@@ -1,5 +1,5 @@
-import { DarkModeToggler } from "@/components/DarkModeToggler";
-import * as S from "./Header.styles";
+import { DarkModeToggler } from '@/components/DarkModeToggler'
+import * as S from './Header.styles'
 
 const Header: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         <DarkModeToggler />
       </div>
     </S.Header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

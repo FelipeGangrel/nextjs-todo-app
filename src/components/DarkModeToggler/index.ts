@@ -1,1 +1,1 @@
-export { default as DarkModeToggler } from "./DarkModeToggler";
+export { default as DarkModeToggler } from './DarkModeToggler'
