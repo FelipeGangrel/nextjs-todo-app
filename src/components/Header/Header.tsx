@@ -1,3 +1,4 @@
+import { DarkModeToggler } from "@/components/DarkModeToggler";
 import * as S from "./Header.styles";
 
 const Header: React.FC = () => {
@@ -5,7 +6,9 @@ const Header: React.FC = () => {
     <S.Header>
       <div>logo</div>
       <div>menu</div>
-      <div>actions</div>
+      <div>
+        <DarkModeToggler />
+      </div>
     </S.Header>
   );
 };
