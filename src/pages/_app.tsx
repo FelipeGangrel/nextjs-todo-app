@@ -1,10 +1,11 @@
 import { ThemeProvider } from 'next-themes'
-import type { AppProps } from 'next/app'
+import { AppPropsWithLayout } from '@/contracts/common'
 import { darkTheme, globalStyles } from '@root/stitches.config'
 
-export default function App({ Component, pageProps }: AppProps) {
-  globalStyles()
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page)
 
+  globalStyles()
   return (
     <ThemeProvider
       attribute='class'
@@ -14,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         light: 'light',
       }}
     >
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </ThemeProvider>
   )
 }
