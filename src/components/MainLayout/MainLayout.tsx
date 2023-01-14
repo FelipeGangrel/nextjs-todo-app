@@ -4,12 +4,14 @@ type MainLayoutProps = {
   children: React.ReactNode
 }
 
+import * as S from './MainLayout.styles'
+
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
-      {children}
-    </div>
+      <S.ChildrenContainer>{children}</S.ChildrenContainer>
+    </>
   )
 }
 
