@@ -1,7 +1,7 @@
 import { VariantProps } from '@stitches/react'
-import { styled } from '@root/stitches.config'
+import { css, styled } from '@root/stitches.config'
 
-export const Button = styled('button', {
+export const buttonStyles = css({
   '&:active': {
     background: '$slate3',
   },
@@ -39,6 +39,10 @@ export const Button = styled('button', {
       },
     },
   },
+})
+
+export const Button = styled('button', {
+  ...buttonStyles,
 })
 
 export type StyledButtonVariants = VariantProps<typeof Button>
