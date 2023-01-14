@@ -1,3 +1,3 @@
-import { MainPage } from '@/modules/main/MainPage'
+import { HomePage } from '@/modules/home/HomePage'
 
-export default MainPage
+export default HomePage
