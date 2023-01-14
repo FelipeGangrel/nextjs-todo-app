@@ -1,68 +1,68 @@
 import {
-  slate,
-  slateDark,
   crimson,
   crimsonDark,
   indigo,
   indigoDark,
-} from "@radix-ui/colors";
-import { createStitches } from "@stitches/react";
+  slate,
+  slateDark,
+} from '@radix-ui/colors'
+import { createStitches } from '@stitches/react'
 
 export const {
-  styled,
+  config,
+  createTheme,
   css,
+  getCssText,
   globalCss,
   keyframes,
-  getCssText,
+  styled,
   theme,
-  createTheme,
-  config,
 } = createStitches({
+  media: {
+    bp1: '(min-width: 480px)',
+    bp2: '(min-width: 768px)',
+    bp3: '(min-width: 1024px)',
+  },
   theme: {
+    borderStyles: {},
+    borderWidths: {},
     colors: {
       ...slate,
       ...indigo,
       ...crimson,
     },
-    space: {
-      1: "4px",
-      2: "8px",
-      3: "16px",
-      4: "24px",
+    fonts: {
+      mono: 'Söhne Mono, menlo, monospace',
+      untitled: 'Untitled Sans, apple-system, sans-serif',
     },
     fontSizes: {
-      1: "12px",
-      2: "13px",
-      3: "15px",
-    },
-    fonts: {
-      untitled: "Untitled Sans, apple-system, sans-serif",
-      mono: "Söhne Mono, menlo, monospace",
+      1: '12px',
+      2: '14px',
+      3: '16px',
     },
     fontWeights: {
       1: 400,
       2: 500,
       3: 600,
     },
-    lineHeights: {},
     letterSpacings: {},
-    sizes: {},
-    borderWidths: {},
-    borderStyles: {},
+    lineHeights: {},
     radii: {
-      1: "2px",
-      2: "4px",
-      3: "8px",
-      4: "12px",
+      1: '2px',
+      2: '4px',
+      3: '8px',
+      4: '12px',
     },
     shadows: {},
-    zIndices: {},
+    sizes: {},
+    space: {
+      1: '4px',
+      2: '8px',
+      3: '16px',
+      4: '24px',
+    },
     transitions: {},
-  },
-  media: {
-    bp1: "(min-width: 480px)",
-    bp2: "(min-width: 768px)",
-    bp3: "(min-width: 1024px)",
+    zIndices: {},
   },
   utils: {
     marginX: (value: unknown) => ({
@@ -70,37 +70,37 @@ export const {
       marginRight: value,
     }),
     marginY: (value: unknown) => ({
-      marginTop: value,
       marginBottom: value,
+      marginTop: value,
     }),
   },
-});
+})
 
-export const darkTheme = createTheme("dark", {
+export const darkTheme = createTheme('dark', {
   colors: {
     ...slateDark,
     ...indigoDark,
     ...crimsonDark,
   },
-});
+})
 
 export const globalStyles = globalCss({
-  "*": {
-    boxSizing: "border-box",
-    padding: 0,
-    margin: 0,
-  },
-  "html, body": {
+  '*': {
+    boxSizing: 'border-box',
     margin: 0,
     padding: 0,
-    fontFamily: "$untitled",
-    fontSize: "$2",
-    background: "$slate1",
-    color: "$slate11",
   },
   button: {
-    "&:hover": {
-      cursor: "pointer",
+    '&:hover': {
+      cursor: 'pointer',
     },
   },
-});
+  'html, body': {
+    background: '$slate1',
+    color: '$slate11',
+    fontFamily: '$untitled',
+    fontSize: '$2',
+    margin: 0,
+    padding: 0,
+  },
+})
