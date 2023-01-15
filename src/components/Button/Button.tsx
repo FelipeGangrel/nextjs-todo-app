@@ -1,6 +1,6 @@
 import * as S from './Button.styles'
 
-type ButtonProps = React.HTMLAttributes<HTMLButtonElement> &
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   S.StyledButtonVariants
 
 const Button: React.FC<ButtonProps> = ({ children, ...buttonProps }) => {

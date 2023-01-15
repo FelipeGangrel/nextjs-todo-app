@@ -47,6 +47,11 @@ export const buttonStyles = css({
         },
       },
     },
+    fullWidth: {
+      true: {
+        width: '100%',
+      },
+    },
   },
 })
 
