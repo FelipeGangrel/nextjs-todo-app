@@ -4,7 +4,7 @@ import { ValidationError } from 'yup'
 export default function yupErrorHandler(
   error: any,
   formRef?: React.RefObject<FormHandles>
-) {
+): Record<string, any> {
   if (!(error instanceof ValidationError)) {
     return {}
   }
@@ -20,4 +20,6 @@ export default function yupErrorHandler(
   if (formRef) {
     formRef.current?.setErrors(errorMessages)
   }
+
+  return errorMessages
 }

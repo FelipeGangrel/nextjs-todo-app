@@ -1,6 +1,6 @@
 import { FormHandles, SubmitHandler } from '@unform/core'
 import { Form } from '@unform/web'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import * as Yup from 'yup'
 import { Button } from '@/components'
 import { Input, Label } from '@/components/forms'
@@ -14,6 +14,20 @@ type FormData = {
 
 const LoginForm: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
+  const [errorCollection, setErrorCollection] = useState<Record<string, any>>(
+    {}
+  )
+
+  const clearError = (name: string) => {
+    setErrorCollection((prev) => {
+      const newErrorCollection = { ...prev }
+      delete newErrorCollection[name]
+
+      formRef.current?.setErrors(newErrorCollection)
+
+      return newErrorCollection
+    })
+  }
 
   const handleSubmit: SubmitHandler<FormData> = async (data) => {
     try {
@@ -30,7 +44,7 @@ const LoginForm: React.FC = () => {
 
       console.log('valid data', validData)
     } catch (error) {
-      yupErrorHandler(error, formRef)
+      setErrorCollection(yupErrorHandler(error, formRef))
     }
   }
 
@@ -39,17 +53,18 @@ const LoginForm: React.FC = () => {
       <Form ref={formRef} onSubmit={handleSubmit}>
         <fieldset>
           <Label htmlFor='email'>Email</Label>
-          <Input type='email' name='email' id='email' />
-          {formRef.current?.getFieldError('email') && (
-            <span>{formRef.current?.getFieldError('email')}</span>
-          )}
+          <Input name='email' id='email' onFocus={() => clearError('email')} />
+          {errorCollection.email && <span>{errorCollection.email}</span>}
         </fieldset>
         <fieldset>
           <Label htmlFor='password'>Password</Label>
-          <Input type='password' name='password' id='password' />
-          {formRef.current?.getFieldError('password') && (
-            <span>{formRef.current?.getFieldError('password')}</span>
-          )}
+          <Input
+            type='password'
+            name='password'
+            id='password'
+            onFocus={() => clearError('password')}
+          />
+          {errorCollection.password && <span>{errorCollection.password}</span>}
         </fieldset>
         <Button type='submit' color='primary' fullWidth>
           Submit
