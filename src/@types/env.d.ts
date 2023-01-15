@@ -1,6 +1,6 @@
 namespace NodeJS {
   interface ProcessEnv {
     SECRET_COOKIE_PASSWORD: string
-    JSON_SERVER_URL: string
+    NEXT_PUBLIC_JSON_SERVER_URL: string
   }
 }

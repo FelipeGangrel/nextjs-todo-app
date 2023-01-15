@@ -21,7 +21,7 @@ export default withSessionRoute(async (req, res) => {
       throw new Error('Missing email or password')
     }
 
-    const baseUrl = process.env.JSON_SERVER_URL
+    const baseUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL
     const url = withQueryParams(`${baseUrl}/users`, { email, password })
 
     const matchingUsers = await jsonFetcher(url)

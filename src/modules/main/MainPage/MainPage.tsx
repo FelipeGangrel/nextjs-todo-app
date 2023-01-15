@@ -1,11 +1,20 @@
 import { MainLayout } from '@/components'
 import type { NextPageWithLayout } from '@/contracts/common'
+import { Todo } from '@/contracts/todo'
+import { useFetch } from '@/hooks'
+import { TodoList } from '../TodoList'
+import * as S from './MainPage.styles'
+
+const url = `${process.env.NEXT_PUBLIC_JSON_SERVER_URL}/todos`
 
 const MainPage: NextPageWithLayout = () => {
+  const { data: todos } = useFetch<Todo[]>(url)
+
   return (
-    <div>
+    <S.MainContainer>
       <h1>Main page</h1>
-    </div>
+      <TodoList todos={todos || []} />
+    </S.MainContainer>
   )
 }
 
