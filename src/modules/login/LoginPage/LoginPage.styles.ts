@@ -9,9 +9,7 @@ export const FormContainer = styled('div', {
   background: '$slate2',
   padding: '$5',
   borderRadius: '$4',
-  borderColor: '$slate4',
-  borderWidth: '$2',
-  borderStyle: 'solid',
+  boxShadow: '$2',
 })
 
 export const FormHeader = styled('div', {

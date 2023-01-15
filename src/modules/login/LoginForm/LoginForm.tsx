@@ -3,7 +3,7 @@ import { Form } from '@unform/web'
 import { useRef, useState } from 'react'
 import * as Yup from 'yup'
 import { Button } from '@/components'
-import { Input, Label } from '@/components/forms'
+import { FieldError, Input, Label } from '@/components/forms'
 import yupErrorHandler from '@/lib/yupErrorHandler'
 import * as S from './LoginForm.styles'
 
@@ -54,7 +54,9 @@ const LoginForm: React.FC = () => {
         <fieldset>
           <Label htmlFor='email'>Email</Label>
           <Input name='email' id='email' onFocus={() => clearError('email')} />
-          {errorCollection.email && <span>{errorCollection.email}</span>}
+          {errorCollection.email && (
+            <FieldError>{errorCollection.email}</FieldError>
+          )}
         </fieldset>
         <fieldset>
           <Label htmlFor='password'>Password</Label>
@@ -64,7 +66,9 @@ const LoginForm: React.FC = () => {
             id='password'
             onFocus={() => clearError('password')}
           />
-          {errorCollection.password && <span>{errorCollection.password}</span>}
+          {errorCollection.password && (
+            <FieldError>{errorCollection.password}</FieldError>
+          )}
         </fieldset>
         <Button type='submit' color='primary' fullWidth>
           Submit
