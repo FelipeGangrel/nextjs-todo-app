@@ -1,5 +1,4 @@
 import { LinkProps } from 'next/link'
-import React from 'react'
 import * as S from './LinkButton.styles'
 
 type LinkButtonProps = LinkProps &
