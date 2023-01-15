@@ -32,8 +32,18 @@ export default withSessionRoute(async (req, res) => {
 
     const user = matchingUsers[0]
 
-    console.log('User logged in', user)
+    if (!user) {
+      throw new Error('Invalid email or password')
+    }
+
+    session.user = {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+    }
+    await session.save()
+    res.status(200).json({ user: session.user })
   } catch (error) {
-    res.status(405).json({ error: (error as Error)?.message })
+    res.status(400).json({ error: (error as Error)?.message })
   }
 })
