@@ -1,4 +1,5 @@
 import { Form } from '@unform/web'
+import { Button } from '@/components'
 import { Input, Label } from '@/components/forms'
 import * as S from './LoginForm.styles'
 
@@ -14,6 +15,9 @@ const LoginForm: React.FC = () => {
           <Label htmlFor='password'>Password</Label>
           <Input type='password' name='password' id='password' />
         </fieldset>
+        <Button color='primary' style={{ flex: 1, width: '100%' }}>
+          Submit
+        </Button>
       </Form>
     </S.FormContainer>
   )

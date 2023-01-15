@@ -25,7 +25,10 @@ export const {
   },
   theme: {
     borderStyles: {},
-    borderWidths: {},
+    borderWidths: {
+      1: '1px',
+      2: '2px',
+    },
     colors: {
       ...slate,
       ...indigo,
@@ -52,14 +55,19 @@ export const {
       2: '4px',
       3: '8px',
       4: '12px',
+      round: '9999px',
     },
-    shadows: {},
+    shadows: {
+      1: '0 2px 4px 0 rgba(0, 0, 0, 0.1)',
+      2: '0 4px 8px 0 rgba(0, 0, 0, 0.1)',
+    },
     sizes: {},
     space: {
       1: '4px',
       2: '8px',
       3: '16px',
       4: '24px',
+      5: '32px',
     },
     transitions: {},
     zIndices: {},
@@ -90,6 +98,10 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
   },
+  ':focus': {
+    outline: 'none',
+    boxShadow: 'none',
+  },
   button: {
     '&:hover': {
       cursor: 'pointer',
@@ -97,7 +109,7 @@ export const globalStyles = globalCss({
   },
   'html, body': {
     background: '$slate1',
-    color: '$slate11',
+    color: '$slate12',
     fontFamily: '$untitled',
     fontSize: '$2',
     margin: 0,

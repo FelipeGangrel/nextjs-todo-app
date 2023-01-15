@@ -2,40 +2,49 @@ import { VariantProps } from '@stitches/react'
 import { css, styled } from '@root/stitches.config'
 
 export const buttonStyles = css({
-  '&:active': {
-    background: '$slate3',
-  },
+  padding: '$2 $3',
+
+  borderColor: 'transparent',
+  borderStyle: 'solid',
+  borderWidth: '$2',
+  borderRadius: '$2',
+
+  background: 'transparent',
+  color: '$slate11',
+  fontWeight: '$2',
+
   '&:hover': {
     background: '$slate2',
   },
-  background: 'transparent',
-  border: 'none',
-  borderRadius: '$2',
-  color: '$slate11',
-  fontWeight: '$2',
-  padding: '$2 $3',
+  '&:active': {
+    background: '$slate3',
+  },
 
   variants: {
     color: {
       danger: {
-        '&:active': {
-          background: '$crimson5',
-        },
+        background: '$crimson3',
+        color: '$crimson11',
         '&:hover': {
           background: '$crimson4',
+          borderColor: '$crimson7',
         },
-        background: '$crimson3',
-        color: '$crimson12',
+        '&:active': {
+          background: '$crimson5',
+          borderColor: '$crimson7',
+        },
       },
       primary: {
-        '&:active': {
-          background: '$indigo5',
-        },
+        background: '$indigo3',
+        color: '$indigo11',
         '&:hover': {
           background: '$indigo4',
+          borderColor: '$indigo7',
         },
-        background: '$indigo3',
-        color: '$indigo12',
+        '&:active': {
+          background: '$indigo5',
+          borderColor: '$indigo7',
+        },
       },
     },
   },
