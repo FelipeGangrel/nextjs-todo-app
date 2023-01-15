@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components'
+import { MainLayout, PageHeader } from '@/components'
 import type { NextPageWithLayout } from '@/contracts/common'
 import { Todo } from '@/contracts/todo'
 import { useFetch } from '@/hooks'
@@ -12,7 +12,7 @@ const MainPage: NextPageWithLayout = () => {
 
   return (
     <S.MainContainer>
-      <h1>Main page</h1>
+      <PageHeader title='Todo List' />
       <TodoList todos={todos || []} />
     </S.MainContainer>
   )

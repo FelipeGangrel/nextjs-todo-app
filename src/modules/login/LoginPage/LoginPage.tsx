@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components'
+import { MainLayout, PageHeader } from '@/components'
 import type { NextPageWithLayout } from '@/contracts/common'
 import { LoginForm } from '../LoginForm'
 import * as S from './LoginPage.styles'
@@ -6,9 +6,7 @@ import * as S from './LoginPage.styles'
 const LoginPage: NextPageWithLayout = () => {
   return (
     <S.MainContainer>
-      <S.FormHeader>
-        <S.FormTitle>Login</S.FormTitle>
-      </S.FormHeader>
+      <PageHeader title='Login' />
       <S.FormContainer>
         <LoginForm />
       </S.FormContainer>

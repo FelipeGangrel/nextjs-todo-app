@@ -11,11 +11,3 @@ export const FormContainer = styled('div', {
   borderRadius: '$4',
   boxShadow: '$2',
 })
-
-export const FormHeader = styled('div', {
-  marginY: '$4',
-})
-
-export const FormTitle = styled('h1', {
-  textAlign: 'center',
-})
